@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nerko+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="bootstrap-5.3.1-dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body style="background-color: rgb(28, 11, 36)">
+    <div class="container w-75 m-auto p-3">
+      <div class="head d-flex align-items-center justify-content-center">
+        <h1>Bookmarker</h1>
+      </div>
+
+      <div
+        class="form-group2 d-flex align-items-center justify-content-center py-2"
+      >
+        <i
+          style="font-size: 2rem; color: rgb(63, 17, 54)"
+          class="fa-solid fa-bookmark"
+        ></i
+        >&emsp;
+        <h2><strong>Bookmark your favorite sites</strong></h2>
+        &emsp;<i
+          style="font-size: 2rem; color: rgb(63, 17, 54)"
+          class="fa-solid fa-bookmark"
+        ></i>
+      </div>
+      <div class="form-group3 py-2">
+        <label class="pb-2">
+          <h5 style="font-weight: 100px">
+            <i class="fa-regular fa-floppy-disk pe-1"></i> Site Name
+          </h5>
+        </label>
+        <input
+        placeholder="Enter Your Site Name"
+          onkeyup="check(this.value)"
+          type="text"
+          id="nameE"
+          class="form-control"
+        /> <p>Site Name Must be At least 3 Letter</p>
+      </div>
+      
+      <div class="form-group3 py-2 pt-4">
+
+        <label  class="pb-2">
+          <h5 style="font-weight: 100px">
+            <i class="fa-solid fa-link pe-1"></i> Site URL
+          </h5>
+        </label>
+        <input type="url" placeholder="Enter Your Link"  id="URL" name="URL" class="form-control " />
+      </div>
+      <div
+        class="form-group4 d-flex align-items-center justify-content-center py-2"
+      >
+        <button
+          onclick="AddSite()"
+          type="Submit"
+          class="btn"
+          style="color: rgb(22, 3, 41); background-color: rgb(150, 95, 139)"
+        >
+          Submit
+        </button>
+        <div
+          class="box-info position-absolute start-0 top-0 w-100 h-100 d-flex justify-content-center align-items-center d-none"
+          style="backdrop-filter: blur(5px)"
+        >
+          <div
+            style="background-color: rgb(63, 17, 54)"
+            class="box-conent p-4 rounded-2 shadow-lg"
+          >
+            <header
+              class="box-header bg-transparent w-100 d-flex justify-content-between align-items-center mb-4"
+            >
+              <i
+                class="fa-solid fa-triangle-exclamation"
+                style="color: #756e8c; font-size: 60px"
+              ></i>
+              <h2 style="color: #756e8c; font-style: italic">WARNING</h2>
+              <button class="btn border-0" id="closeBtn">
+                <i class="fa-solid fa-xmark close fs-3"></i>
+              </button>
+            </header>
+            <p class="m-0 pb-2">
+              Site Name or Url is not valid, Please follow the rules below :
+            </p>
+            <ol class="rules list-unstyled m-0">
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i>Site name must
+                contain at least 3 characters
+              </li>
+              <li>
+                <i class="fa-regular fa-circle-right p-2"></i>Site URL must be a
+                valid one
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="ccc"></div>
+      </div>
+      <div style="border-bottom: 2px pink dashed" class="py-2 m-2"></div>
+      <div class="container">
+        <table class="table text-center py-4 mt-3">
+          <thead>
+            <th>Index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+          </thead>
+          <tbody id="TTbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <script src="bootstrap-5.3.1-dist/js/bootstrap.bundle.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
